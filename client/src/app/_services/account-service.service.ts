@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { userInfo } from 'os';
 import { ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { User } from '../model/user';
