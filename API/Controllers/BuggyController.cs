@@ -8,10 +8,16 @@ namespace API.Controllers
 {
     public class BuggyController : BaseApiController
     {
-        public BuggyController(DataContext context, ITokenService tokenService) : base(context, tokenService)
+        private readonly DataContext _context;
+        private readonly ITokenService _tokenService;
+
+        public BuggyController(DataContext context, ITokenService tokenService)
         {
+            _context = context;
+            _tokenService = tokenService;
         }
 
+        
         [Authorize]
         [HttpGet("auth")]
         public ActionResult<string> GetSecret()

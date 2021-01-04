@@ -12,8 +12,13 @@ namespace API.Controllers
 {
     public class AccountController : BaseApiController
     {
-        public AccountController(DataContext context, ITokenService tokenService) : base(context, tokenService)
+        private readonly DataContext _context;
+        private readonly ITokenService _tokenService;
+
+        public AccountController(DataContext context, ITokenService tokenService)
         {
+            _context = context;
+            _tokenService = tokenService;
         }
 
         [HttpPost("login")]
